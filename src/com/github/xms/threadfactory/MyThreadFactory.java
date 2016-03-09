@@ -10,37 +10,36 @@ package com.github.xms.threadfactory;
 import java.util.concurrent.ThreadFactory;
 
 /**
- * Project:concurrency
- * Package:com.github.xms.threadfactory
- * FileName:MyThreadFactory.java
- * Comments:
- * JDK Version:
- * Author XuMaoSen
- * Create Date:2015Äê11ÔÂ24ÈÕ ÏÂÎç9:33:40
+ * @author XuMaoSen
+ * Create Date:2016å¹´2æœˆ25æ—¥ ä¸‹åˆ8:18:44
  * Description:
  * Version:1.0.0
  */
-public class MyThreadFactory implements ThreadFactory {
-	
-	private int count;
-	private String name;
+public class MyThreadFactory implements ThreadFactory
+{
 
-	/**
-	 * Author XuMaoSen
-	 * Create Date:2015Äê11ÔÂ24ÈÕ ÏÂÎç9:39:59
-	 * Description:
-	 */
-	public MyThreadFactory(String name) {
-		this.count = 0;
-		this.name = name;
-	}
+    private int count;
+    private String name;
 
-	/* @author XuMaoSen 
-	 */
-	@Override
-	public Thread newThread(Runnable r) {
+    /**
+     * @author XuMaoSen
+     * Create Date:2016å¹´2æœˆ25æ—¥ ä¸‹åˆ8:20:21
+     * Description:
+     */
+    public MyThreadFactory(String name)
+    {
+        this.count = 0;
+        this.name = name;
+    }
 
-		return new Thread(r, name + "-Thread_" + count++);
-	}
+    /*
+     * @author XuMaoSen
+     */
+    @Override
+    public Thread newThread(Runnable r)
+    {
+
+        return new Thread(r, name + "-Thread_" + count++);
+    }
 
 }
